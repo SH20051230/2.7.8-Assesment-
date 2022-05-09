@@ -1,12 +1,13 @@
 # This is a simple program asking user's max budget available
-def integer_checker():
-    
+def float_checker(question):
+    number = ""
+    while not number:
+        try:
+            number = float(input(question))
+            return number
+        except ValueError:
+            print("Please enter an integer")
 
 
-
-
-
-
-# Main rountine
-budget = int(input("what's your highest available budget?: "))
+budget = float_checker("what's your highest available budget?: ")
 
