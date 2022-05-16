@@ -1,5 +1,6 @@
 # This is a simple program asking user's max budget available
-def float_checker(question):
+# The function that check both integers and decimals are valid
+def Budget_checker(question):
     number = ""
     while not number:
         try:
@@ -8,6 +9,6 @@ def float_checker(question):
         except ValueError:
             print("Please enter an integer")
 
-
-budget = float_checker("what's your highest available budget?: ")
+# Main routine
+budget = Budget_checker("what's your highest available budget?: ")
 
