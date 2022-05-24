@@ -1,3 +1,5 @@
+# This is the initial layout of each process of the whole program
+
 # Imports
 
 # Functions

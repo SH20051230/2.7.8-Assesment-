@@ -12,5 +12,6 @@ def unit_checker():
     return unit_checker()
 
 # Main routine
+# This is just for testing purposes
 for test in range(6):
     print(f"you choose {unit_checker()}")

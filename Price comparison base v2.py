@@ -1,3 +1,6 @@
+# In this version i have merged my budget checker function inside it
+# And tested to make sure it's working correctly as expected
+
 # Imports
 
 # Functions
