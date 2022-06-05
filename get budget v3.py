@@ -16,7 +16,7 @@ def Budget_checker(question):
 Max_budget = 100
 budget = Budget_checker("what's your highest available budget?: ")
 while budget > 100:
-    print("Please enter a regular number eg: lower or equal to 100")
+    print("Please enter a regular number between 1 and 100: ")
     budget = Budget_checker("what's your highest available budget?: ")
 
 

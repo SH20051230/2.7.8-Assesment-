@@ -1,4 +1,5 @@
-# I have merged this code into my original code making it contain all details needed
+# Copied version of Code
+# This is for append details to list and while loop to get more product details
 # Main routine
 all_products = []
 valid_list = False

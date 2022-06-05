@@ -1,6 +1,6 @@
-# In this version i have added in my product name input
-# And with the function that can check if the name is valid and not blank
-# And test it make sure it's working correctly
+# Added in component of number of units, price and calculation of price per unit
+# Fixed component to merge into base
+# Test and ensure it's working
 # Imports
 
 # Functions
@@ -43,19 +43,38 @@ def not_blank(question):
             return response
 
 
+def price_per_unit_cal():
+    price = number_checker("what's the price of the product?: ")
+    units = number_checker("what's the amount of units: ")
+    while price and units == 0:
+        int(input("please re enter the amount"))
 
+    price_per_unit = price / units
+    return price_per_unit
+
+
+# This is a normal integer checker that differ from the budget checker
+# As it doesn't include the limits of budget from 1 to 100
+def number_checker(question):
+    number = ""
+    while not number:
+        try:
+            answer = float(input(question))
+            return answer
+        except ValueError:
+            print("Please enter an integer, eg:5")
 
 # Main routine
 # Get details
 budget = Budget_checker("what's your highest available budget?: ", 1, 101)
-product_name = not_blank("what's the name of your product that you want to compared?: ")
-unit_compared = "What unit do you want to compare in?: "
+# list to store all available valid units
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
                ["ml", "millilitres"]]
-unit_choose = unit_checker("what unit do you want to compared in?; " ,valid_units)
+unit_choose = unit_checker("what unit do you want to compared in?; ",valid_units)
 print(f"you choose {unit_choose}")
-
-
+# Calculation of the price per unit
+Price_per_unit = price_per_unit_cal()
+print(f"The price per unit for this product is ${Price_per_unit:.2f}")
 # Loops around until escape code had been entered
 
 # Calculation of the price per unit
