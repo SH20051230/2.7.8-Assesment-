@@ -1,7 +1,7 @@
 # In this version i have added in my product name input
 # And with the function that can check if the name is valid and not blank
 # And test it make sure it's working correctly
-# Imports
+
 
 # Functions
 # check for valid input of budget entered
@@ -47,7 +47,7 @@ def not_blank(question):
 
 # Main routine
 # Get details
-budget = Budget_checker("what's your highest available budget?: ", 1, 101)
+budget = Budget_checker("what's your highest available budget?: ", 1, 100)
 product_name = not_blank("what's the name of your product that you want to compared?: ")
 unit_compared = "What unit do you want to compare in?: "
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],

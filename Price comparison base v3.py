@@ -1,7 +1,6 @@
 # In this version 3 base i have added in my unit checker function and merged with the budget checker
-# And i also tested to make sure both are working and in correct order
+# And I also tested to make sure both are working and in correct order
 
-# Imports
 
 # Functions
 # check for valid input of budget entered
@@ -32,12 +31,13 @@ def unit_checker(question, valid_unit):
     print(unit_error)
     return unit_checker(question, valid_unit)
 
+
 # Main routine
-budget = Budget_checker("what's your highest available budget?: ", 1, 101)
+budget = Budget_checker("what's your highest available budget?: ", 1, 100)
 unit_compared = "What unit do you want to compare in?: "
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
                ["ml", "millilitres"]]
-unit_choose = unit_checker("what unit do you want to compared in?; " ,valid_units)
+unit_choose = unit_checker("what unit do you want to compared in?; ", valid_units)
 print(f"you choose {unit_choose}")
 
 # integer checker for values

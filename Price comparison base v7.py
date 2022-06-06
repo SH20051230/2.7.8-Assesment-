@@ -8,7 +8,7 @@ def Budget_checker(question, low_num, high_num):
     number = ""
     while not number:
         try:
-            number = float(input(question))
+            number = float(input(question))   # check for decimals
             while number >= low_num and number <= high_num:
                 return number
             else:
@@ -31,6 +31,7 @@ def unit_checker(question, valid_unit):
     return unit_checker(question, valid_unit)
 
 
+# Product name can't be blank
 def not_blank(question):
     while True:
         response = input(question)
@@ -40,6 +41,7 @@ def not_blank(question):
             return response
 
 
+# unit price calculator
 def price_per_unit_cal():
     price = number_checker("what's the price of the product?: ")
     units = number_checker("what's the amount of units: ")
@@ -67,7 +69,8 @@ def number_checker(question):
 
 # Main routine
 # Get details
-budget = Budget_checker("what's your highest available budget?: ", 1, 101)
+budget = Budget_checker("what's your highest available budget?: ", 1, 100)
+print(f"Your budget is {budget}")
 # list to store all available valid units
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
                ["ml", "millilitres"]]
@@ -78,16 +81,21 @@ valid_list = False
 while not valid_list:
     # lists to store details of both unit and price
     product_item = []   # The list that holds each product details
-    product_name = not_blank("what's the name of the product")
+    product_name = not_blank("what's the name of the product or press X to terminate: ")
     product_item.append(product_name)
     print()
     if product_name == "x":  # Break the loop when x entered
-        valid_list = True
+        if len(all_products) == 0:   # If nothing had been entered break the loop and print out the message
+            print("No item had been entered")
+            break
+        else:
+         valid_list = True
         all_products.sort(key=lambda x: x[3])   # sort list by unit price put cheapest at position 0
-        print(f"we recommend {all_products[0][0]} at {all_products[0][3]} per unit price as the best choice\n"
+        print(f"we recommend {all_products[0][0]} at {all_products[0][3]:.2f} per unit price as the best choice\n"
               f"The full list had been printed below: \n")
+
         for i in all_products:
-            print(f"{i[2]} units of {i[0]} at ${i[3]} per unit")
+            print(f"{i[2]} units of {i[0]} at ${i[3]:.2f} per unit")   # rounded into 2dp
     else:   # If more items had been added
         product_cost = number_checker(f"what's the price of {product_name}: $")  # Get the price of the product
         product_item.append(product_cost)    # Add price to the list
@@ -101,8 +109,6 @@ while not valid_list:
         product_item.append(unit_value)  # append details to list
         print()
         all_products.append(product_item)  # add items list into the main list
-        print("This is the current list of items, (name, price, units and unit price")
-        print(all_products)  # print the main list
 
 # Print all choices that's in range of the budget
 

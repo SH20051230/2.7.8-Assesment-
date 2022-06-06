@@ -5,7 +5,7 @@ def not_blank(question, error_messages):
     valid = ""
     while not valid:
         response = input(question)
-        if not response:
+        if not response():
             print(error_messages)
         else:
             return response

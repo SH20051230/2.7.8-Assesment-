@@ -1,5 +1,5 @@
 # This is a program that gets the unit need to be compared
-# In this version i have added a few more choices of the units
+# In this version I have added a few more choices of the units
 # by including its full name and other short ways of write it
 # And changed the testing in the main routine to an ordinary input
 def unit_checker(question, valid_unit):
@@ -13,11 +13,12 @@ def unit_checker(question, valid_unit):
     print(unit_error)
     return unit_checker(question, valid_unit)
 
-# Main routine
+
 # This list contains all valid units for now
 # more can be added if required in the future
+# Main routine
 unit_compared = "What unit do you want to compare in?: "
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
                ["ml", "millilitres"]]
-unit_choose = unit_checker("what unit do you want to compared in?; " ,valid_units)
+unit_choose = unit_checker("what unit do you want to compared in?; ", valid_units)
 print(f"you choose {unit_choose}")

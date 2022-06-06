@@ -1,8 +1,6 @@
 # Added in component of number of units, price and calculation of price per unit
 # Fixed component to merge into base
 # Test and ensure it's working
-# Imports
-
 # Functions
 # check for valid input of budget entered
 def Budget_checker(question, low_num, high_num):
@@ -10,7 +8,7 @@ def Budget_checker(question, low_num, high_num):
     number = ""
     while not number:
         try:
-            number = float(input(question))
+            number = float(input(question))   # float includes decimals numbers
             while number >= low_num and number <= high_num:
                 return number
             else:
@@ -33,7 +31,7 @@ def unit_checker(question, valid_unit):
     return unit_checker(question, valid_unit)
 
 
-
+# product name can't be blank
 def not_blank(question):
     while True:
         response = input(question)
@@ -43,6 +41,7 @@ def not_blank(question):
             return response
 
 
+# unit price calculator
 def price_per_unit_cal():
     price = number_checker("what's the price of the product?: ")
     units = number_checker("what's the amount of units: ")
@@ -66,7 +65,7 @@ def number_checker(question):
 
 # Main routine
 # Get details
-budget = Budget_checker("what's your highest available budget?: ", 1, 101)
+budget = Budget_checker("what's your highest available budget?: ", 1, 100)
 # list to store all available valid units
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
                ["ml", "millilitres"]]

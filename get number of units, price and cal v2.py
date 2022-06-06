@@ -10,9 +10,9 @@ def Budget_checker(question):
             print("Please enter an integer")
 
 
-
+# unit price calculator
 def price_per_unit_cal():
-    units = Budget_checker("Please enter the amount of units: ")
+    units = Budget_checker("Please enter the amount of units: ")  # input of both units and price
     price = Budget_checker("Please enter the product price: ")
     price_per_unit = price / units
     return price_per_unit

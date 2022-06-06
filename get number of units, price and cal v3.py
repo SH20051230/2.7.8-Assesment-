@@ -13,11 +13,11 @@ def Budget_checker(question):
 
 def price_per_unit_cal():
     units = Budget_checker("Please enter the amount of units: ")
-    while units < 1:   # This loops out the choice of 0
+    while units <= 0:   # This loops out the choice of 0 and - values
         units = Budget_checker("Please enter a valid number (It can not be 0): ")
 
     price = Budget_checker("Please enter the product price: ")
-    while price < 1:
+    while price <= 0:   # So is the price
         price = Budget_checker("Please enter a valid product price (it can not be 0): ")
 
     price_per_unit = price / units

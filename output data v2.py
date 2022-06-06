@@ -2,8 +2,9 @@
 # This is for append details to list and while loop to get more product details components
 # I have changed some inputs with my functions in order to work
 # on unexpected inputs
-# Functions
 
+
+# Functions
 def Budget_checker(question):
     number = ""
     while not number:
@@ -12,8 +13,6 @@ def Budget_checker(question):
             return number
         except ValueError:
             print("Please enter an integer")
-
-
 
 
 def price_per_unit_cal():
@@ -29,8 +28,6 @@ def price_per_unit_cal():
     return price_per_unit
 
 
-
-
 def not_blank(question):
     while True:
         response = input(question)
@@ -38,7 +35,6 @@ def not_blank(question):
             print("You can't leave this blank, and please enter a name with alpha characters")
         else:
             return response
-
 
 
 def unit_checker(question, valid_unit):
@@ -51,9 +47,6 @@ def unit_checker(question, valid_unit):
 
     print(unit_error)
     return unit_checker(question, valid_unit)
-
-
-
 
 
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],

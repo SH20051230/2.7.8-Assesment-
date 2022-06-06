@@ -14,6 +14,7 @@ def Budget_checker(question):
             print("Please enter an integer")
 
 
+# The range of budget that can be entered
 budget_range = range(1, 101)
 budget = Budget_checker("what's your highest availble budget?: ")
 while not 1 <= budget <= 100:

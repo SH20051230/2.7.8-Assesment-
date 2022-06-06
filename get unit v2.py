@@ -13,6 +13,7 @@ def unit_checker(question, valid_unit):
     print(unit_error)
     return unit_checker(question, valid_unit)
 
+
 # Main routine
 # This is just for testing purposes
 unit_compared = "What unit do you want to compare in?: "

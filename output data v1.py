@@ -27,5 +27,3 @@ while not valid_list:
         print()
         all_products.append(product_item)  # add items list into the main list
         print(all_products)  # print the main list
-
-

@@ -11,23 +11,21 @@ def Budget_checker(question):
             print("Please enter an integer")
 
 
-
-
+# unit price calculator
 def price_per_unit_cal():
     units = Budget_checker("Please enter the amount of units: ")
-    while units < 1:   # This loops out the choice of 0
+    while units <= 0:   # This loops out the choice of 0 and - choices
         units = Budget_checker("Please enter a valid number (It can not be 0): ")
 
     price = Budget_checker("Please enter the product price: ")
-    while price < 1:
+    while price <= 0:   # So is the price
         price = Budget_checker("Please enter a valid product price (it can not be 0): ")
 
     price_per_unit = price / units
     return price_per_unit
 
 
-
-
+# Product name can't be blank
 def not_blank(question):
     while True:
         response = input(question)
@@ -35,7 +33,6 @@ def not_blank(question):
             print("You can't leave this blank, and please enter a name with alpha characters")
         else:
             return response
-
 
 
 # Main routine

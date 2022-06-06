@@ -6,8 +6,8 @@ def Budget_checker(question, low_num, high_num):
     number = ""
     while not number:
         try:
-            number = float(input(question))
-            while number >= low_num and number <= high_num:
+            number = float(input(question))  # float to include decimals
+            while number >= low_num and number <= high_num:   # if the number is in range, return it.
                 return number
             else:
                 print(error_message)
@@ -16,6 +16,6 @@ def Budget_checker(question, low_num, high_num):
             print("Please enter an integer")
 
 # Main routine
-budget = Budget_checker("what's your highest available budget?: ", 1, 101)
+budget = Budget_checker("what's your highest available budget?: ", 1, 100)
 
 
