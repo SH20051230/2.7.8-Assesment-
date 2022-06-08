@@ -1,9 +1,6 @@
-# in this version I merged my instruction component in and tested
-# Make sure it's still working
-# And also with the new function of choice checker that check the choice of read instructions
-# Are valid or not
-# Functions
-# check for valid input of budget entered
+# In this final outcome
+# I have added my usability testing suggestions in
+# And performed a comprehensive testing of all of my components
 def Budget_checker(question, low_num, high_num):
     error_message = f"please enter a regular amount of budget between {low_num} and {high_num}"
     number = ""
@@ -111,7 +108,7 @@ budget = Budget_checker("what's your highest available budget?: ", 1, 100)
 print(f"Your budget is ${budget}")
 # list to store all available valid units
 valid_units = [["kg", "kilograms", "kilo"], ["g", "grams", "gr"], ["l", "litres", "lit"],
-               ["ml", "millilitres"], ["height", "h"]]
+               ["ml", "millilitres"], ["meters", "m"], ["centermeters", "cm"]]
 
 # Calculation of the price per unit
 # Loops around until escape code had been entered
@@ -148,5 +145,3 @@ while not valid_list:
         product_item.append(unit_value)  # append details to list
         print()
         all_products.append(product_item)  # add items list into the main list
-
-
