@@ -57,7 +57,10 @@ def number_checker(question):
     while not number:
         try:
             answer = float(input(question))
-            return answer
+            if answer == 0:
+                print("You can't have 0 as the value")
+            else:
+             return answer
         except ValueError:
             print("Please enter an integer, eg:5")
 
@@ -127,11 +130,11 @@ while not valid_list:
         else:
          valid_list = True
         all_products.sort(key=lambda x: x[3])   # sort list by unit price put cheapest at position 0
-        print(f"we recommend {all_products[0][0]} at {all_products[0][3]:.2f} per unit price as the best choice\n"
+        print(f"we recommend {all_products[0][0]} at {all_products[0][3]:.4f} per unit price as the best choice\n"
               f"The full list had been printed below: \n")
 
         for i in all_products:
-            print(f"{i[2]} units of {i[0]} at ${i[3]:.2f} per unit")   # rounded into 2dp
+            print(f"{i[2]} units of {i[0]} at ${i[3]:.4f} per unit")   # rounded into 4dp consider the usability results
     else:   # If more items had been added
         product_cost = number_checker(f"what's the price of {product_name}: $")  # Get the price of the product
         product_item.append(product_cost)    # Add price to the list
